@@ -188,7 +188,17 @@ def explain_search():
 
     TODO
     """
-    return "TODO"
+    return (
+        "Why Greedy Fails\n"
+        "- **The failure mode:** Greedy choosing the next closet node can lead to a globally suboptimal solution despite making the local best choice.\n"
+        "- **Counter-example setup:** Using the illustration, only changing D to C to be 4 instead of 1.\n"
+        "- **What greedy picks:** Greedy starts by choosing B (1), from B goes to D (1), from D to C since B had already been visisted, from C to T. Total Cost = 7\n"
+        "- **What optimal picks:** Optimal could start by choosing S to D (2), D to C (1), C to B (1), B to T(1), total cost = 5.\n"
+        "- **Why greedy loses:** Greedy lost because although it chose the locally optimal choice, it did not consider future choices.\n\n"
+
+        "### What the Algorithm Must Explore\n"
+        "- The algorithm must explore the most optimal order to visit relics which produces the lowest cost."
+    )
 
 
 # =============================================================================

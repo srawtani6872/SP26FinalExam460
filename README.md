@@ -105,17 +105,17 @@ This matters for the route planner becuase if you don't have correct distances, 
 > State the failure mode. Then give a concrete counter-example using specific node names
 > or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** Greedy choosing the next closet node can lead to a globally suboptimal solution despite making the local best choice.
+- **Counter-example setup:** Using the illustration, only changing D to C to be 4 instead of 1.
+- **What greedy picks:** reedy starts by choosing B (1), from B goes to D (1), from D to C since B had already been visisted, from C to T. Total Cost = 7
+- **What optimal picks:** Optimal could start by choosing S to D (2), D to C (1), C to B (1), B to T(1), total cost = 5
+- **Why greedy loses:** Greedy lost because although it chose the locally optimal choice, it did not consider future choices.
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- The algorithm must explore the most optimal order to visit relics which produces the lowest cost. 
 
 ---
 

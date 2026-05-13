@@ -11,11 +11,11 @@
 
 
 
-I will complete the parts in order. I want to complete parts 1, 2, and 3 of the assignment by tomorrow and part 4, 5, 6 on Thursday. I expect the most difficult parts are going to be parts 5 and 6. 
+I will complete the parts in order. I want to complete parts 1, 2, and 3 of the assignment by tomorrow and part 4, 5, 6 by Thursday. I expect the most difficult parts are going to be parts 5 and 6. 
 
 ---
 
-## Entry 2 – [5/13]: [First 3 parts done.]
+## Entry 2 – [5/13]: [First 3 parts done]
 
 
 
@@ -47,7 +47,7 @@ _Your entry here._
 | Part 1: Problem Analysis |30min|
 | Part 2: Precomputation Design |75min|
 | Part 3: Algorithm Correctness |20min|
-| Part 4: Search Design | |
+| Part 4: Search Design |20min|
 | Part 5: State and Search Space | |
 | Part 6: Pruning | |
 | Part 7: Implementation | |
