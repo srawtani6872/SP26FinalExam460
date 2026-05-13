@@ -1,7 +1,7 @@
 # The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** Sushil Rawtani
+**Student ID:** 827320709
 **Course:** CS 460 – Algorithms | Spring 2026
 
 > This README is your project documentation. Write it the way a developer would document
@@ -17,13 +17,13 @@
 > per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+  We cannot use a shortest-path from just S because a single shortest path does not give the order in which to visit relics
 
 - **What decision remains after all inter-location costs are known:**
-  _Your answer here._
+  The order to visit the relics
 
 - **Why this requires a search over orders (one sentence):**
-  _Your answer here._
+  This requires a search over orders because the total cost depends on the order relics are visited
 
 ---
 
@@ -35,8 +35,8 @@
 
 | Source Node Type | Why it is a source |
 |---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| Spawn Node | Its a source node because you want to compute shortest distance froom the spawn to everry other node and the exit|
+| Other Relic Nodes | Its a source because at each relic, you want the shortest distance between that relic and other relics and the exit|
 
 ### Part 2b: Distance Storage
 
@@ -44,20 +44,20 @@
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | Dictionary / Hashmap|
+| What the keys represent | Source nodes |
+| What the values represent | Shortest Distance |
+| Lookup time complexity | O(1)|
+| Why O(1) lookup is possible | Hashmaps have O(1) lookup |
 
 ### Part 2c: Precomputation Complexity
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** Run Dijkstra for every relic + the spawn
+- **Cost per run:** O((n+m)logn)
+- **Total complexity:** O(k*(n+m)logn)
+- **Justification (one line):** You Run Dijkstra's for each relic and the spawn
 
 ---
 
@@ -72,29 +72,29 @@
 > Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  Their distance is the guaranteed shortest path from the source node
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  Their distance is the current shortest path so far, but not guaranteed. 
 
 ### Part 3b: Why Each Phase Holds
 
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  The initialization holds because the distance from the source to the source is zero. We have not discovered any other nodes, therefore the distance to them is infinity. 
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  Because the edge weights are nonnegative, it's safe to finalize because there cannot be another path found later that sums up to less than what's been finalized. 
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+ When the algorithm ends, the invariant gaurentees the shortest path from the source node to all other nodes.  
 
 ### Part 3c: Why This Matters for the Route Planner
 
 > One sentence connecting correct distances to correct routing decisions.
 
-_Your answer here._
+This matters for the route planner becuase if you don't have correct distances, then you will not be able to have an optimal route. 
 
 ---
 

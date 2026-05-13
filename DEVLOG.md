@@ -1,30 +1,25 @@
 # Development Log – The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** Sushil Rawtani
+**Student ID:** 827320709
 
-> Instructions: Write at least four dated entries. Required entry types are marked below.
-> Two to five sentences per entry is sufficient. Write entries as you go, not all in one
-> sitting. Graders check that entries reflect genuine work across multiple sessions.
-> Delete all blockquotes before submitting.
+
 
 ---
 
-## Entry 1 – [Date]: Initial Plan
+## Entry 1 – [5/12]: Initial Plan
 
-> Required. Write this before writing any code. Describe your plan: what you will
-> implement first, what parts you expect to be difficult, and how you plan to test.
 
-_Your entry here._
+
+I will complete the parts in order. I want to complete parts 1, 2, and 3 of the assignment by tomorrow and part 4, 5, 6 on Thursday. I expect the most difficult parts are going to be parts 5 and 6. 
 
 ---
 
-## Entry 2 – [Date]: [Short description]
+## Entry 2 – [5/13]: [First 3 parts done.]
 
-> Required. At least one entry must describe a bug, wrong assumption, or design change
-> you encountered. Describe what went wrong and how you resolved it.
 
-_Your entry here._
+
+Finished up parts 1, 2, and 3. Implemented select_sources, run_dijkstra, and precompute_distances
 
 ---
 
@@ -49,9 +44,9 @@ _Your entry here._
 
 | Part | Estimated Hours |
 |---|---|
-| Part 1: Problem Analysis | |
-| Part 2: Precomputation Design | |
-| Part 3: Algorithm Correctness | |
+| Part 1: Problem Analysis |30min|
+| Part 2: Precomputation Design |75min|
+| Part 3: Algorithm Correctness |20min|
 | Part 4: Search Design | |
 | Part 5: State and Search Space | |
 | Part 6: Pruning | |

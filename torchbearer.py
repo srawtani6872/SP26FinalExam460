@@ -2,8 +2,8 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
-Student ID:   ___________________________
+Student Name: Sushil Rawtani
+Student ID:   827320709
 
 INSTRUCTIONS
 ------------
@@ -34,7 +34,12 @@ def explain_problem():
 
     TODO
     """
-    return "TODO"
+    return ("*Why a single shortest-path run from S is not enough: \n" 
+    "We cannot use a shortest-path from just S because a single shortest path does not give the order in which to visit relics \n" 
+    "*What decision remains after all inter-location costs are known: \n" 
+    "The order to visit the relics \n" 
+    "*Why this requires a search over orders (one sentence): \n" 
+    "This requires a search over orders because the total cost depends on the order relics are visited \n") 
 
 
 # =============================================================================
@@ -56,7 +61,14 @@ def select_sources(spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    sources = set()
+
+    sources.add(spawn)
+
+    for relic in relics:
+        sources.add(relic)
+
+    return list(sources)
 
 
 def run_dijkstra(graph, source):
@@ -75,7 +87,27 @@ def run_dijkstra(graph, source):
 
     TODO
     """
-    pass
+    pq = []
+
+    dist = {node: float('inf') for node in graph}
+
+    dist[source] = 0
+    heapq.heappush(pq, (0, source))
+
+    while pq:
+        curr, u = heapq.heappop(pq)
+
+        if curr > dist[u]:
+            continue
+
+        for v, w in graph[u]:
+
+            if dist[u] + w < dist[v]:
+                dist[v] = dist[u] + w
+                heapq.heappush(pq, (dist[v],v))
+
+    return dist
+    
 
 
 def precompute_distances(graph, spawn, relics, exit_node):
@@ -95,7 +127,15 @@ def precompute_distances(graph, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    dist_table = {}
+
+    sources = select_sources(spawn, relics, exit_node)
+
+    for source in sources:
+        dist_table[source] = run_dijkstra(graph, source)
+    
+    return dist_table
+    
 
 
 # =============================================================================
@@ -112,7 +152,26 @@ def dijkstra_invariant_check():
 
     TODO
     """
-    return "TODO"
+    return (
+        "**For nodes already finalized (in S):** "
+        "Their distance is the guaranteed shortest path from the source node.\n"
+
+        "**For nodes not yet finalized (not in S):** "
+        "Their distance is the shortest path discovered so far, but it is not yet guaranteed.\n"
+
+        "**Initialization : why the invariant holds before iteration 1:** "
+        "The invariant holds because the source node has distance 0, while all other nodes are initialized to infinity since no paths to them have been discovered yet.\n"
+
+        "**Maintenance : why finalizing the min-dist node is always correct:** "
+        "Because all edge weights are nonnegative, once the minimum-distance node is selected, no later path can produce a smaller distance than the one already finalized.\n"
+
+        "**Termination : what the invariant guarantees when the algorithm ends:** "
+        "When the algorithm ends, every finalized node has the true shortest-path distance from the source node.\n"
+
+        "**Part 3c: Why This Matters for the Route Planner** "
+        "This matters for the route planner because incorrect shortest-path distances could cause the algorithm to choose a non-optimal route."
+    ) 
+
 
 
 # =============================================================================
