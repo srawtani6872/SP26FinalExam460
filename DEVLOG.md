@@ -23,9 +23,9 @@ Finished up parts 1, 2, and 3. Implemented select_sources, run_dijkstra, and pre
 
 ---
 
-## Entry 3 – [Date]: [Short description]
+## Entry 3 – [5/14]: [Short description]
 
-_Your entry here._
+Completed README for part 4, 5, 6, and implemented final_optimal_route, _explore, and solve. During part 5, a wrong assumption I first had was that the time complexity was O(k^k), but I realized that was wrong becuase as you go forward, there's less to consider. 
 
 ---
 
@@ -48,8 +48,8 @@ _Your entry here._
 | Part 2: Precomputation Design |75min|
 | Part 3: Algorithm Correctness |20min|
 | Part 4: Search Design |20min|
-| Part 5: State and Search Space | |
-| Part 6: Pruning | |
+| Part 5: State and Search Space |90 min|
+| Part 6: Pruning |60min|
 | Part 7: Implementation | |
 | README and DEVLOG writing | |
 | **Total** | |

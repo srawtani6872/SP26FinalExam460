@@ -271,6 +271,10 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
             best[1] = relics_visited_order[:]
             return 
     
+    #Pruning condition: It is safe because if the current cost of this path is already worse than the best option, 
+    # there's no reason to explore it, so we should prune it. 
+    if cost_so_far >= best[0]:
+        return
     
     #Recursive
     for relic in relics_remaining.copy():
@@ -308,8 +312,10 @@ def solve(graph, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    dist_table = precompute_distances(graph, spawn, relics, exit_node)
+    optimal_route = find_optimal_route(dist_table, spawn, relics, exit_node)
 
+    return optimal_route
 
 # =============================================================================
 # PROVIDED TESTS (do not modify)

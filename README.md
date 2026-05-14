@@ -159,23 +159,23 @@ This matters for the route planner becuase if you don't have correct distances, 
 
 > Three bullets.
 
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** The best route so far
+- **When it is used:** It it used before the loop to check if the current path is equal or worse than the best known path
+- **What it allows the algorithm to skip:** Allows the algorithm to skip paths that are already equal or worse than the best known path 
 
 ### Part 6b: Lower Bound Estimation
 
 > Three bullets.
 
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** You know the cost so far, the current location, and the relics that need to be visited. 
+- **What the lower bound accounts for:** The lower bound accounts for the current cost so far
+- **Why it never overestimates:** It doesn't over estimate because the only thing being considered is the current cost so far. 
 
 ### Part 6c: Pruning Correctness
 
 > One to two bullets. Explain why pruning is safe.
 
-- _Your answer here._
+- The reason why pruning is safe is because if the current path cost is equal or worse than the best known path,  then there is no resune to continute explorating that path. 
 
 ---
 
@@ -183,4 +183,5 @@ This matters for the route planner becuase if you don't have correct distances, 
 
 > Bullet list. If none beyond lecture notes, write that.
 
-- _Your references here._
+- https://www.geeksforgeeks.org/dsa/dijkstras-shortest-path-algorithm-greedy-algo-7/
+- https://www.geeksforgeeks.org/dsa/time-and-space-complexity-of-dijkstras-algorithm/
