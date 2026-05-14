@@ -128,9 +128,9 @@ This matters for the route planner becuase if you don't have correct distances, 
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location | current_loc | node | The current node of the search |
+| Relics already collected | relics_remaining | set[node] | unvisited relics |
+| Fuel cost so far | cost_so_far | float | The total cost so far |
 
 ### Part 5b: Data Structure for Visited Relics
 
@@ -138,18 +138,18 @@ This matters for the route planner becuase if you don't have correct distances, 
 
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen | set |
+| Operation: check if relic already collected | Time complexity: O(1)|
+| Operation: mark a relic as collected | Time complexity: O(1) |
+| Operation: unmark a relic (backtrack) | Time complexity: O(1)|
+| Why this structure fits |A set fits because sets can do all these operations O(1) time, much faster than other data structures like a list|
 
 ### Part 5c: Worst-Case Search Space
 
 > Two bullets.
 
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** O(k!)
+- **Why:** For each relic, you can consider all possible orders. As you go forward, there's less to consider, so that's why it's O(k!)
 
 ---
 
