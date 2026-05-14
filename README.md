@@ -4,17 +4,9 @@
 **Student ID:** 827320709
 **Course:** CS 460 – Algorithms | Spring 2026
 
-> This README is your project documentation. Write it the way a developer would document
-> their design decisions , bullet points, brief justifications, and concrete examples where
-> required. You are not writing an essay. You are explaining what you built and why you built
-> it that way. Delete all blockquotes like this one before submitting.
-
 ---
 
 ## Part 1: Problem Analysis
-
-> Document why this problem is not just a shortest-path problem. Three bullet points, one
-> per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
   We cannot use a shortest-path from just S because a single shortest path does not give the order in which to visit relics
@@ -31,8 +23,6 @@
 
 ### Part 2a: Source Selection
 
-> List the source node types as a bullet list. For each, one-line reason.
-
 | Source Node Type | Why it is a source |
 |---|---|
 | Spawn Node | Its a source node because you want to compute shortest distance froom the spawn to everry other node and the exit|
@@ -40,7 +30,6 @@
 
 ### Part 2b: Distance Storage
 
-> Fill in the table. No prose required.
 
 | Property | Your answer |
 |---|---|
@@ -52,7 +41,6 @@
 
 ### Part 2c: Precomputation Complexity
 
-> State the total complexity and show the arithmetic. Two to three lines max.
 
 - **Number of Dijkstra runs:** Run Dijkstra for every relic + the spawn
 - **Cost per run:** O((n+m)logn)
@@ -63,13 +51,9 @@
 
 ## Part 3: Algorithm Correctness
 
-> Document your understanding of why Dijkstra produces correct distances.
-> Bullet points and short sentences throughout. No paragraphs.
 
 ### Part 3a: What the Invariant Means
 
-> Two bullets: one for finalized nodes, one for non-finalized nodes.
-> Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
   Their distance is the guaranteed shortest path from the source node
@@ -79,7 +63,6 @@
 
 ### Part 3b: Why Each Phase Holds
 
-> One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
   The initialization holds because the distance from the source to the source is zero. We have not discovered any other nodes, therefore the distance to them is infinity. 
@@ -92,7 +75,6 @@
 
 ### Part 3c: Why This Matters for the Route Planner
 
-> One sentence connecting correct distances to correct routing decisions.
 
 This matters for the route planner becuase if you don't have correct distances, then you will not be able to have an optimal route. 
 
@@ -102,8 +84,6 @@ This matters for the route planner becuase if you don't have correct distances, 
 
 ### Why Greedy Fails
 
-> State the failure mode. Then give a concrete counter-example using specific node names
-> or costs (you may use the illustration example from the spec). Three to five bullets.
 
 - **The failure mode:** Greedy choosing the next closet node can lead to a globally suboptimal solution despite making the local best choice.
 - **Counter-example setup:** Using the illustration, only changing D to C to be 4 instead of 1.
@@ -113,8 +93,6 @@ This matters for the route planner becuase if you don't have correct distances, 
 
 ### What the Algorithm Must Explore
 
-> One bullet. Must use the word "order."
-
 - The algorithm must explore the most optimal order to visit relics which produces the lowest cost. 
 
 ---
@@ -123,8 +101,6 @@ This matters for the route planner becuase if you don't have correct distances, 
 
 ### Part 5a: State Representation
 
-> Document the three components of your search state as a table.
-> Variable names here must match exactly what you use in torchbearer.py.
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
@@ -134,7 +110,6 @@ This matters for the route planner becuase if you don't have correct distances, 
 
 ### Part 5b: Data Structure for Visited Relics
 
-> Fill in the table.
 
 | Property | Your answer |
 |---|---|
@@ -146,8 +121,6 @@ This matters for the route planner becuase if you don't have correct distances, 
 
 ### Part 5c: Worst-Case Search Space
 
-> Two bullets.
-
 - **Worst-case number of orders considered:** O(k!)
 - **Why:** For each relic, you can consider all possible orders. As you go forward, there's less to consider, so that's why it's O(k!)
 
@@ -157,15 +130,11 @@ This matters for the route planner becuase if you don't have correct distances, 
 
 ### Part 6a: Best-So-Far Tracking
 
-> Three bullets.
-
 - **What is tracked:** The best route so far
 - **When it is used:** It it used before the loop to check if the current path is equal or worse than the best known path
 - **What it allows the algorithm to skip:** Allows the algorithm to skip paths that are already equal or worse than the best known path 
 
 ### Part 6b: Lower Bound Estimation
-
-> Three bullets.
 
 - **What information is available at the current state:** You know the cost so far, the current location, and the relics that need to be visited. 
 - **What the lower bound accounts for:** The lower bound accounts for the current cost so far
@@ -173,15 +142,12 @@ This matters for the route planner becuase if you don't have correct distances, 
 
 ### Part 6c: Pruning Correctness
 
-> One to two bullets. Explain why pruning is safe.
-
 - The reason why pruning is safe is because if the current path cost is equal or worse than the best known path,  then there is no resune to continute explorating that path. 
 
 ---
 
 ## References
 
-> Bullet list. If none beyond lecture notes, write that.
-
 - https://www.geeksforgeeks.org/dsa/dijkstras-shortest-path-algorithm-greedy-algo-7/
 - https://www.geeksforgeeks.org/dsa/time-and-space-complexity-of-dijkstras-algorithm/
+- Lecture notes
